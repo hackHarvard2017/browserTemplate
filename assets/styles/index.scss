@@ -207,35 +207,37 @@ label {
   display: none;
 }
 
-td {
-  background-color: #FFFFFF;
-  padding: 10px;
-}
-
-th {
-  background: #B22222;
-  color: #EAEAEA;
-}
-
-table {
-  box-shadow: 3px 3px 10px rgba(0, 0, 0, .4);
-  border: 4px solid #B22222;
-  margin-top: 200px;
-}
-
-.dataTables_wrapper {
-  clear: both;
-  float: left;
-  width: 73%;
-  margin: 10px 0 130px;
-}
-
-
-.table-data {
-  color: #B22222;
-  text-align: left;
-  vertical-align: center;
-}
+// uncomment if adding a dataTable
+//
+// td {
+//   background-color: #FFFFFF;
+//   padding: 10px;
+// }
+//
+// th {
+//   background: #B22222;
+//   color: #EAEAEA;
+// }
+//
+// table {
+//   box-shadow: 3px 3px 10px rgba(0, 0, 0, .4);
+//   border: 4px solid #B22222;
+//   margin-top: 200px;
+// }
+//
+// .dataTables_wrapper {
+//   clear: both;
+//   float: left;
+//   width: 73%;
+//   margin: 10px 0 130px;
+// }
+//
+//
+// .table-data {
+//   color: #B22222;
+//   text-align: left;
+//   vertical-align: center;
+// }
 
 .signup-prompt {
   color: #FAFAFA;
@@ -302,7 +304,7 @@ p {
 }
 
 .error-msg {
-  color: white;
+  color: red;
 }
 
 .success-msg {
