@@ -1,43 +1,52 @@
 'use strict'
-const store = require('./../store')
+
+const store = require('../store')
 
 const signUpSuccess = (data) => {
-  console.log("sign up success")
+  $('#signUpModal').modal('hide')
+  $('.text-field-product').val('')
+  $('#UiSuccess').text('').fadeIn('fast').delay(5000).fadeOut('slow')
 }
 
 const signUpFailure = () => {
-  console.log("sign up failed")
+  $('.sign-up-error-msg').text('Oops! Something went wrong! Please check required fields and try again!').fadeIn('fast').delay(3000).fadeOut('slow')
 }
 
 const signInSuccess = (data) => {
-  console.log("sign in success")
+  store.user = data.user
+  $('.logged-out').hide()
+  $('.logged-in').show()
+  $('.greeting').text('welcome back, ' + data.user.email)
 }
 
-const signInFail = () => {
-  console.log("sign in failed")
-}
-const signOutSuccess = (data) => {
-  console.log("sign out success")
-}
-const signOutFail = (data) => {
-  console.log("sign out fail")
+const signInFailure = () => {
+  $('.sign-in-error-msg').text('Oops! Something went wrong! Please check your username and password and try again!').fadeIn('fast').delay(3000).fadeOut('slow')
 }
 
 const changePasswordSuccess = (data) => {
-  console.log("change password success")
+  $('#changePwModal').modal('hide')
 }
 
 const changePasswordFailure = () => {
-  console.log("change password failure")
+  $('.change-pw-error-msg').text('The password you entered is incorrect! Please try again.').fadeIn('fast').delay(3000).fadeOut('slow')
 }
 
+const signOutSuccess = (data) => {
+  $('.logged-in').hide()
+  $('.logged-out').show()
+}
+
+const signOutFailure = () => {
+}
+
+
 module.exports = {
-  signInSuccess,
-  signInFail,
   signUpSuccess,
   signUpFailure,
-  signOutSuccess,
-  signOutFail,
+  signInSuccess,
+  signInFailure,
+  changePasswordSuccess,
   changePasswordFailure,
-  changePasswordSuccess
+  signOutSuccess,
+  signOutFailure
 }
